@@ -11,11 +11,17 @@
 			<!--
 			Directives are prefixed with v-
 			Vue also provides the v-model directive that makes two-way binding between form input and app-->
-			<input v-model="term" type="search">
+			<div>
+			<b>Insert address:</b>
+			</div>
+			<input v-model="term" type="search" placeholder="City, address">
 			<!--To let users interact with your app, we can use the v-on directive -->
 			<button v-on:click="search">Search</button>
 			<!--v-for directive can be used for displaying a list of items using the data from an Array-->
 			<div v-for="result in results">
+				<div>
+					<b>Coordinates of location:</b>
+				</div>
 				<b>lat:</b> {{result.geometry.location.lat}}<br/>
 				<b>lng:</b> {{result.geometry.location.lng}}<br/>
 				<br clear="left">
