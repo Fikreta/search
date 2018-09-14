@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<div id="app">
+			<!--
+			Directives are prefixed with v-
+			Vue also provides the v-model directive that makes two-way binding between form input and app-->
+			<input v-model="term" type="search">
+			<!--To let users interact with your app, we can use the v-on directive -->
+			<button v-on:click="search">Search</button>
+			<!--v-for directive can be used for displaying a list of items using the data from an Array-->
+			<div v-for="result in results">
+				<b>lat:</b> {{result.geometry.location.lat}}<br/>
+				<b>lng:</b> {{result.geometry.location.lng}}<br/>
+				<br clear="left">
+			</div>
+			<div v-if="noResults">Sorry, no results were found</div>
+		</div>
+		<!--include vue-->
+		<script src="https://unpkg.com/vue"></script>
+		<!--include js-->
+		<script src="./assets/js/search.js"></script>
+	</body>
+</html>
